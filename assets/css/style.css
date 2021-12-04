@@ -1,50 +1,195 @@
 /*CSS by Anders Erik Nissen
 UCN MMDA0920*/
 @charset "uft-8";
-* {box-sizing: border-box;}
 
-
-
-
-/*############### 
-    VARIABLER 
-################*/
-
-
-/*###########  
-    GRID  
-############*/
-.grid {
-    display: grid;
-    grid-template-columns: repeat(var(--grid-column-desk), 1fr);
-    grid-gap: var(--grid-gap);
+* {
+    box-sizing: border-box;
 }
-.grid-clmnCenter {
-    justify-content: center;
-    align-items: center;
+
+/* 
+    Button
+*/
+button {
+    border: none;
+    border-radius: 3px;
+
+    background: red;
+    color: white;
+    padding: 1rem 2rem;
+    font-size: 1rem;
 }
-/*##########
-    FLEX 
-###########*/
-.flex-center-XandY {
+#btn__div {
+    position: absolute;
+    z-index: 1000;
+}
+/* 
+========================
+========== #1 ==========
+========================
+*/
+#transition1__container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+
     display: flex;
-    flex-direction: var(--flex-direction);
-    flex-wrap: var(--flex-wrap);
+}
+
+.transition1__div--outer {
+    position: relative;
+    width: 25%;
+    height: 100%;
+    overflow: hidden;
+}
+.transition1__div {
+    /* position: absolute;
+    bottom: 100%;
+    left: 0; */
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 6, 22);
+    background: linear-gradient(0deg, rgba(0, 6, 22, 1) 0%, rgba(0, 6, 22, 1) 100%);
+    opacity: 0;
+
+    z-index: 2;
+
+    /* transform: translateY(-101%); */
+    /* transition: 1s linear; */
+}
+
+.active .transition1__div--one {
+    animation: t1--one .5s linear forwards;
+}
+.active .transition1__div--two {
+    animation: t1--two .5s linear forwards;
+}
+.active .transition1__div--three {
+    animation: t1--three .5s linear forwards;
+}
+.active .transition1__div--four {
+    animation: t1--four .5s linear forwards;
+}
+@keyframes t1--one {
+    10% {
+        opacity: 100%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+@keyframes t1--two {
+    25% {
+        opacity: 0%;
+    }
+    35% {
+        opacity: 100%;
+    }
+    100% {   
+        opacity: 100%;
+    }
+}
+@keyframes t1--three {
+    50% {
+        opacity: 0%;
+    }
+    60% {
+        opacity: 100%;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+@keyframes t1--four {
+    75% {
+        opacity: 0%;
+    }
+    85% {
+        opacity: 100%;
+    }
+    100% { 
+        opacity: 100%;
+    }
+}
+
+.inactive .transition1__div--one {
+    animation: t1--one--inactive .5s linear forwards;
+}
+.inactive .transition1__div--two {
+    animation: t1--two--inactive .5s linear forwards;
+}
+.inactive .transition1__div--three {
+    animation: t1--three--inactive .5s linear forwards;
+}
+.inactive .transition1__div--four {
+    animation: t1--four--inactive .5s linear forwards;
+}
+
+@keyframes t1--one--inactive {
+    0% { 
+        opacity: 100%;
+    }
+    90% {
+        opacity: 100%;
+    }
+    100% {
+        opacity: 0%;
+    }
+}
+@keyframes t1--two--inactive {
+    0% { 
+        opacity: 100%;
+    }
+    50% {
+        opacity: 100%;
+    }
+    60% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 0%;
+    }
+}
+@keyframes t1--three--inactive {
+    0% { 
+        opacity: 100%;
+    }
+    25% {
+        opacity: 100%;
+    }
+    35% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 0%;
+    }
+}
+@keyframes t1--four--inactive {
+    0% { 
+        opacity: 100%;
+    }
+    10% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 0%;
+    }
+}
+
+/* 
+    Text Area
+*/
+#transition1_txtContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
-
-/*##################
-    MEDIA QUERIES 
-###################*/
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-    .grid {
-        grid-template-columns: repeat(var(--grid-column-tablet), 1fr);
-    }
-}
-@media screen and (min-width: 320px) and (max-width: 480px) {
-    .grid {
-        grid-template-columns: repeat(var(--grid-column-mobil), 1fr);
-    }
-}
