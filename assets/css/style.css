@@ -2,8 +2,18 @@
 UCN MMDA0920*/
 @charset "uft-8";
 
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
 * {
     box-sizing: border-box;
+}
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+}
+h5 {
+    font-size: 2rem;
+    margin: .7rem 0;
 }
 
 /* 
@@ -191,5 +201,58 @@ button {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
+    color: white;
 }
+.transition1__txtDiv--outer {
+    overflow: hidden;
+    height: 3rem;
+    position: relative;
+}
+.transition1__txtDiv {
+    position: relative;
+    top: -3rem;
+}
+
+.active .t1-txtDiv-one {
+    animation: t1-txtDiv-one 1s linear forwards;
+}
+.active .t1-txtDiv-two {
+    animation: t1-txtDiv-two 1s linear forwards;
+}
+.active .t1-txtDiv-three {
+    animation: t1-txtDiv-three 1s linear forwards;
+}
+.active .t1-txtDiv-four {
+    animation: t1-txtDiv-four 1s linear forwards;
+}
+.active .t1-txtDiv-five {
+    animation: t1-txtDiv-five 1s linear forwards;
+}
+
+@keyframes t1-txtDiv-one {
+    50% {top: -3rem;}
+    60% {top: 0;}
+    100% {top: 0;}
+}
+@keyframes t1-txtDiv-two {
+    60% {top: -3rem;}
+    70% {top: 0;}
+    100% {top: 0;}
+}
+@keyframes t1-txtDiv-three {
+    70% {top: -3rem;}
+    80% {top: 0;}
+    100% {top: 0;}
+}
+@keyframes t1-txtDiv-four {
+    80% {top: -3rem;}
+    90% {top: 0;}
+    100% {top: 0;}
+}
+@keyframes t1-txtDiv-five {
+    90% {top: -3rem;}
+    100% {top: 0;}
+}
+
 
